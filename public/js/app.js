@@ -26,7 +26,7 @@ weatherForm.addEventListener('submit', (e) => {
         return messageOne.textContent = 'You must enter a location!';
     }
 
-    const url = 'http://localhost:3000/weather?address='
+    const url = '/weather?address='
 
     messageOne.textContent ='Loading........';
     messageTwo.textContent = '';
