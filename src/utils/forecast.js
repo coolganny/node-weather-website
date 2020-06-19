@@ -9,8 +9,13 @@ const forecast = (latitude, longitude, callback) => {
         } else if (body.error) {
             callback('invalid input'+response.body.error.info, undefined);
         } else  {
-            callback(undefined, body.current.weather_descriptions[0]  + '. It is currently ' + body.current.temperature + 
-            ' degress out. Feels like temperature is ' + body.current.feelslike + ' F.'
+            console.log(body.current);
+            callback(undefined, body.current.weather_descriptions[0]  + '. It is currently '
+             + body.current.temperature + 
+            ' degress out. Feels like temperature is ' + 
+            body.current.feelslike + ' F. The humidity is ' +  body.current.humidity +
+            '%. Current Local time is ' +
+            body.location.localtime + '.'
             )
         }
     })
